@@ -1,1 +1,0 @@
-En la pagina 404 del pdf (386 del libro), el cuadro naranja. El header y el footer se mantienen fijos?
