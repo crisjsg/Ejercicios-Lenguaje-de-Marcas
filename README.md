@@ -3,9 +3,9 @@ Todos los ejercicios, trabajos o proyectos en LM
 
 ##Contenidos
 1. Ejercicios de marcado con `HTML` junto con hojas de estilo `CSS`. (Enmaquetado y estilos)
-  ··* Flotado y posicionamiento
-  ··* Pseudoclases y tablas
-  ··* Formularios
+··* Flotado y posicionamiento
+··* Pseudoclases y tablas
+··* Formularios
 
 ##Paginas de Interés
 1. [World Wide Web Consortium (W3C)][1]
