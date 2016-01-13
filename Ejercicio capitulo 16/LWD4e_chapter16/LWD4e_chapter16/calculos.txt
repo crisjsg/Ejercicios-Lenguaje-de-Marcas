@@ -1,0 +1,5 @@
+#main  = 660 px
+#news  = 300 px
+#links = -960 px (suma de las posiciones news y main)
+
+suma max = 960px

@@ -1,0 +1,93 @@
+@font-face{ 
+	font-family: "bebasneue";
+	src: url('bebasneue-webfont.ttf') format('truetype');
+}
+
+body {
+	background-image: url(bg.png);
+	font-family: arial
+}
+
+h1, h2{
+	font-family: 'bebasneue';
+	
+}
+
+
+
+/*Aqui estan todos los div*/
+div#banner{
+	color: white;
+	background-image: url(img-banner.png);
+	text-align: right;
+	height: 320px;
+	width: 1300px;
+	clear: both;
+}
+
+div#datos{
+	float: left;
+	width: 1100px
+}
+
+aside#ladoderecha{
+	position: right;
+	list-style-type: none;
+	display: block;
+	float: left;
+	border-style: outset;
+	margin: 50px
+}
+
+
+
+/*Aqui estan todos lo referente a links*/
+a{
+	font-family: arial;
+}
+
+a:hover {
+	color: blue;
+}
+a:hover.dinosaurio{
+	border-bottom-style: dashed;
+}
+
+
+/*Todo lo referente a listas*/
+li {
+	list-style-type: none;
+}
+
+ul #lista{
+padding: 0;
+margin: 0;
+
+}
+ul li #lista {
+	float: left;
+	display: inline;
+}
+#listaderecha{
+	display: block;
+}
+ul #listacondiciones {
+	padding: 0;
+	margin: 0;
+}
+ul li #listacondiciones{
+	float: left;
+}
+
+/*Todo lo referente a secciones*/
+footer#abajo{
+	background-color: #1C69B7;
+	text-align: below;
+	position: bottom;
+	border-radius: 1em;
+	list-style-type: none;
+	display: block;
+	clear: both;
+
+}
+

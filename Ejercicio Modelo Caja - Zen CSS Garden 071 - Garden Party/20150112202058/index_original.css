@@ -1,0 +1,42 @@
+/* ::::: http://www.csszengarden.com/071/071.css?v=8may2013 ::::: */
+
+body { margin: 0px; border-top: 15px solid rgb(0, 0, 0); border-bottom: 15px solid rgb(0, 0, 0); padding: 0px; background: url('background.gif') repeat-y scroll center top rgb(255, 255, 255); text-align: center; }
+.page-wrapper { position: relative; margin: 0px auto; width: 750px; }
+.intro { background: url('lines.gif') repeat-y scroll left top rgb(0, 194, 236); }
+header { padding: 20px 95px 0px 395px; }
+header h1 { position: absolute; top: 0px; left: 0px; background: url('logo.gif') no-repeat scroll left top transparent; width: 375px; height: 270px; text-indent: 100%; white-space: nowrap; overflow: hidden; }
+header h2 { padding: 0px; }
+.summary { padding: 0px 95px 0px 395px; }
+.preamble { background: url('crossing.gif') no-repeat scroll left bottom transparent; padding: 0px 95px 230px 395px; }
+.supporting { position: relative; background: url('lines2.gif') repeat-y scroll left top rgb(16, 162, 197); width: 750px; }
+.explanation { padding: 0px 395px 0px 95px; }
+.participation { padding: 0px 395px 180px 95px; background: url('wave.gif') no-repeat scroll left bottom transparent; }
+.benefits { position: absolute; top: 0px; left: 395px; padding: 0px 95px 0px 0px; }
+.requirements { position: absolute; top: 18.5%; left: 395px; padding: 0px 95px 0px 0px; }
+footer { padding: 0px 95px 5px 395px; background: url('lines3.gif') repeat-y scroll left top transparent; }
+.sidebar { position: absolute; top: 270px; left: 0px; margin: 0px 95px; width: 260px; }
+.design-archives { padding: 2em 0px 1em; }
+.extra1, .extra2, .extra3, .extra4, .extra5, .extra6 { display: none; }
+body { font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; font-weight: bold; text-transform: uppercase; }
+h1, h2, h3, p { margin: 0px; }
+p { padding: 0px 0px 1em; }
+a { color: rgb(255, 255, 255); text-decoration: none; }
+a:hover { text-decoration: overline; }
+.page-wrapper { text-align: left; }
+header h2 { background: url('quicksummary.gif') no-repeat scroll left top transparent; width: 260px; height: 44px; }
+.preamble h3 { background: url('preamble.gif') no-repeat scroll left top transparent; width: 260px; height: 44px; }
+.explanation h3 { background: url('explanation.gif') no-repeat scroll left top transparent; width: 260px; height: 44px; }
+.participation h3 { background: url('participation.gif') no-repeat scroll left top transparent; width: 260px; height: 44px; }
+.benefits h3 { background: url('benefits.gif') no-repeat scroll left top transparent; width: 260px; height: 44px; }
+.requirements h3 { background: url('requirements.gif') no-repeat scroll left top transparent; width: 260px; height: 44px; }
+header h2, .preamble h3, .explanation h3, .participation h3, .benefits h3, .requirements h3 { text-indent: 100%; white-space: nowrap; overflow: hidden; }
+.sidebar h3 { display: none; }
+.sidebar ul { margin: 0px; padding: 0px; list-style-type: none; }
+.sidebar li { margin: 0px; }
+.sidebar a { display: block; font-size: x-large; }
+html > body .sidebar a { font-size: x-large; }
+.sidebar a.designer-name { display: inline; color: rgb(0, 0, 0); font-size: large; }
+html > body .sidebar a.designer-name { font-size: large; }
+.design-archives a, .zen-resources a { display: inline; font-size: medium; }
+html > body .design-archives a, html > body .zen-resources a { font-size: medium; }
+.zen-resources li { background: url('bullet.gif') no-repeat scroll 0px 0.5em transparent; padding: 0px 0px 0px 12px; }

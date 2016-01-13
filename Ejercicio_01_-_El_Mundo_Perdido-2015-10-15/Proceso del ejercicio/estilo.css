@@ -1,0 +1,119 @@
+@font-face{ 
+	font-family: "bebasneue";
+	src: url('bebasneue-webfont.ttf') format('truetype');
+}
+
+body {
+	background-image: url(bg.png);
+	font-family: arial;
+}
+
+h1, h2{
+	font-family: 'bebasneue';
+}
+header{
+	float: left;
+}
+header h1{
+	/*Hay que hacer más ancha la letra*/
+}
+header h2 {
+	color: 737373;
+	/* Hay que hacer la letra mas fina */
+}
+
+
+
+/*Aqui estan todos los div*/
+div#banner{
+	color: white;
+	background-image: url(img-banner.png);
+	text-align: right;
+	height: 320px;
+	width: 1300px;
+	clear: both;
+}
+div#titulobanner{
+
+}
+div#datos{
+	float: left;
+	width: 1100px
+}
+
+aside#ladoderecha{
+	position: right;
+	list-style-type: none;
+	display: block;
+	float: left;
+	border-style: outset;
+	margin: 50px
+}
+#ladoderecha h2 {
+	text-align: center;
+}
+
+/*Aqui estan todos lo referente a links*/
+a{
+	font-family: arial;
+	text-decoration: none;
+}
+
+a:hover #lista {
+	/*buscar color para cuando el raton se ponga encima del link*/
+}
+a:hover.dinosaurio{
+	border-bottom-style: dashed;
+}
+
+
+/*Todo lo referente a listas*/
+li {
+	list-style-type: none;
+}
+
+#lista ul {
+padding: 0;
+margin: 2em 0 0 1000px;
+
+}
+#lista ul li {
+	float: left;
+}
+#lista ul li a{
+	display: block;
+	padding: .5em;
+	margin: .25em;
+}
+#listaderecha{
+	display: block;
+
+}
+#listaderecha ul li{
+	background-color: #DBDBDB;
+}
+#listacondiciones ul {
+	padding: 0;
+	margin: 0;
+	clear: both;
+}
+#listacondiciones ul li {
+	float: left;
+}
+#listacondiciones ul li a{
+	display: block;
+	padding: .5em;
+	margin: .25em;
+}
+
+/*Otros*/
+#listacondiciones{
+	background-color: #1C69B7;
+	text-align: below;
+	position: bottom;
+	border-radius: 1em;
+	list-style-type: none;
+	display: block;
+	clear: both;
+}
+
