@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding "UTF-8"?>
+
+<vuelo id = "203" tipo = "Ida Y Vuelta">
+	<origen>Palma de Mallorca</origen>
+	<destino>Berlín</destino>
+	<salida tipo = "fecha">
+		>dia+mes+año
+	</salida>
+	<regreso></regreso>
+	<pasajero></pasajero>
+</vuelo>
