@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  Poner cuales son obligatorios o numero máximo con un comentario y poner el tipo
+si es complejo o no -->
+
+<ed:reserva 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:ed="http://www.eDreams.es/"
+	xsi:schemaLocation = "http://www.eDreams.es/ eDreams.xsd">
+
+	<vuelo id = "203">
+		<tipo>Ida y Vuelta</tipo>
+		<trayecto>
+			<origen> Palma de Mallorca </origen>
+			<destino> Berlín </destino>
+		</trayecto>
+		<fecha>
+			<salida>
+				<dia> 26 </dia>
+				<mes> 02 </mes>
+				<ano> 2016 </ano>
+			</salida>
+			<regreso>
+				<dia> 10 </dia>
+				<mes> 03 </mes>
+				<ano> 2016 </ano>
+			</regreso>
+		</fecha>
+		<pasajero xsi:type="ed:extTipoPasajeros">
+			<adulto> 2 </adulto>
+			<infante> 2 </infante>
+			<bebe> 0 </bebe>
+			<bultos>2</bultos> <!-- Los bultos pueden ser tanto 
+			animales, instrumentos, bicicletas, etc. -->
+			
+		</pasajero>
+		<clase>
+			<turista> 1 </turista>
+			<turistaSuperior> 0 </turistaSuperior>
+			<business> 2 </business>
+			<primera> 0 </primera>
+		</clase>
+	</vuelo>
+</ed:reserva>

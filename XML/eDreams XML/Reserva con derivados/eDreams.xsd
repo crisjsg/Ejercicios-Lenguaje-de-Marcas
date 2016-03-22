@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+		xmlns:xs = "http://www.w3.org/2001/XMLSchema" 
+		targetNamespace = "http://www.eDreams.es/"
+		xmlns:ed = "http://www.eDreams.es/" 
+		elementFormDefault="unqualified">
+		
+		
+		<!-- Elemento raíz -->
+		
+		<xs:element name="reserva">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element maxOccurs = "unbounded" name="vuelo" type="ed:tipoVuelo"></xs:element>					
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		
+		
+		
+		<!-- Elementos simples -->
+		
+		
+		<xs:simpleType name="tipo"> <!-- A "tipo" se refiere a: Ida,  Vuelta,  Ida y Vuelta -->
+			<xs:restriction base="xs:string">
+					<xs:enumeration value = "Ida y Vuelta"></xs:enumeration>
+					<xs:enumeration value = "Ida"></xs:enumeration>
+					<xs:enumeration value = "Vuelta"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="pasajerosAdultos">
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1"></xs:minInclusive>
+				<xs:maxInclusive value="9"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="pasajerosMenores">
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="0"></xs:minInclusive>
+				<xs:maxInclusive value="9"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<!-- Elementos complejos -->
+		
+		<xs:complexType name="tipoVuelo">
+			<xs:sequence>
+				<xs:element name ="tipo" type="ed:tipo"></xs:element>
+				<xs:element name ="trayecto" type="ed:tipoTrayecto"></xs:element>
+				<xs:element name ="fecha" type="ed:tipoFecha"></xs:element>
+				<xs:element name ="pasajero" type="ed:tipoPasajero"></xs:element>
+				<xs:element name ="clase" type="ed:tipoClase"></xs:element>
+			</xs:sequence>
+			<xs:attribute name = "id" type = "xs:unsignedLong"></xs:attribute>
+		</xs:complexType>
+		
+		<xs:complexType name="tipoTrayecto">
+			<xs:sequence>
+				<xs:element name = "origen" type ="xs:string"></xs:element>
+				<xs:element name = "destino" type ="xs:string"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="tipoFecha">
+			<xs:sequence>
+				<xs:element name="salida" type="ed:tipoSalidaRegreso"></xs:element>
+				<xs:element name="regreso" type="ed:tipoSalidaRegreso"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="tipoSalidaRegreso"> <!-- Al ser Origen y Regreso iguales he creado un mismo tipo para no tener codigo repetido. -->
+			<xs:sequence>
+				<xs:element name="dia" type="xs:integer"></xs:element>
+				<xs:element name="mes" type="xs:integer"></xs:element>
+				<xs:element name="ano" type="xs:integer"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="tipoPasajero">
+			<xs:sequence>
+				<xs:element name="adulto" type="ed:pasajerosAdultos"></xs:element>
+				<xs:element name="infante" type="ed:pasajerosMenores"></xs:element>
+				<xs:element name="bebe" type="ed:pasajerosMenores"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="tipoClase">
+			<xs:sequence>
+				<xs:element name="turista" type="xs:integer"></xs:element>
+				<xs:element name="turistaSuperior" type="xs:integer"></xs:element>
+				<xs:element name="business" type="xs:integer"></xs:element>
+				<xs:element name="primera" type="xs:integer"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<!-- Tipos derivados -->
+		
+		<xs:complexType name="extTipoPasajeros">
+		<xs:complexContent>
+			<xs:extension base="ed:tipoPasajero">
+				<xs:sequence>
+					<xs:element name="bultos" type="xs:integer"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+		
+</xs:schema>
