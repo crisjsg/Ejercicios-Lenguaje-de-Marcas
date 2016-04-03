@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.eDreams.es/" 
+	xmlns:s="http://www.example.org/SubstitutionGroup" 
+	xmlns:ed = "http://www.eDreams.es/"
+	elementFormDefault="unqualified">
+	
+	<xs:complexType name="tipoPasajero"> <!-- Not Bound -->
+		<xs:sequence>
+			<xs:element ref="ed:adulto"></xs:element>
+			<xs:element name="infante" type="ed:pasajerosMenores"></xs:element>
+			<xs:element name="bebe" type="ed:pasajerosMenores"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="pasajerosAdultos">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"></xs:minInclusive>
+			<xs:maxInclusive value="9"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+		
+	<xs:simpleType name="pasajerosMenores">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"></xs:minInclusive>
+			<xs:maxInclusive value="9"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+			
+	<!-- Grupo de substitución -->
+	<xs:element name = "adulto" type = "ed:pasajerosAdultos"></xs:element>
+	<xs:element name="jubilados" type="ed:pasajerosAdultos" substitutionGroup="ed:adulto"/>
+	<xs:element name="estudiantes" type="ed:pasajerosAdultos" substitutionGroup="ed:adulto">
+</schema>

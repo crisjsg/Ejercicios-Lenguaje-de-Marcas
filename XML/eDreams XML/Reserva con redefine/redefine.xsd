@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace = "http://www.eDreams.es/"
+		xmlns:ed = "http://www.eDreams.es/" 
+		elementFormDefault="unqualified"
+		attributeFormDefault="unqualified">
+		
+		<!-- Elementos Simples -->
+		<xs:simpleType name="ed:pasajerosAdultos">
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1"></xs:minInclusive>
+				<xs:maxInclusive value="9"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="pasajerosMenores">
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="0"></xs:minInclusive>
+				<xs:maxInclusive value="9"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<!-- Elementos Complejos -->
+		<xs:complexType name="tipoPasajero">
+			<xs:sequence>
+				<xs:element name="adulto" type="ed:pasajerosAdultos"></xs:element>
+				<xs:element name="infante" type="ed:pasajerosMenores"></xs:element>
+				<xs:element name="bebe" type="ed:pasajerosMenores"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+</schema>

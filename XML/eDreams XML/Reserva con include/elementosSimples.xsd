@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.eDreams.es/elementosSimples" 
+xmlns:s="http://www.eDreams.es/elementosSimples">
+
+		<xs:simpleType name="tipo"> <!-- A "tipo" se refiere a: Ida,  Vuelta,  Ida y Vuelta -->
+			<xs:restriction base="xs:string">
+					<xs:enumeration value = "Ida y Vuelta"></xs:enumeration>
+					<xs:enumeration value = "Ida"></xs:enumeration>
+					<xs:enumeration value = "Vuelta"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="pasajerosAdultos">
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1"></xs:minInclusive>
+				<xs:maxInclusive value="9"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+		
+		<xs:simpleType name="pasajerosMenores">
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="0"></xs:minInclusive>
+				<xs:maxInclusive value="9"></xs:maxInclusive>
+			</xs:restriction>
+		</xs:simpleType>
+</xs:schema>
