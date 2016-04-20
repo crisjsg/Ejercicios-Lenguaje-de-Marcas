@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.w3c.org/objetos"
+	xmlns:obj="http://www.w3c.org/objetos"
+	elementFormDefault="qualified">
+	
+	<!-- Sólo puedes modificar el atributo xmlns:obj en el elemento xsd:schema  -->
+		
+	<!--  Es necesario que completes las definiciones de tipos de este fichero según las indicaciones
+	y que importes este espacio de nombres a tu Schema para validar URL(s), IDs de usuario y hashtags en twitter -->
+	
+	
+	<xsd:import schemaLocation="coordenadas.xsd"></xsd:import>
+	
+   	<!-- Modifica los atributos maxOccurs y minOccurs según convenga  -->
+   	
+	<xsd:element name="URL" type="obj:TURL" />
+	<xsd:element name="ID_user" type="obj:tipoIdUser" />
+	<xsd:element name="hashtag" type="obj:tipoHashtag" />
+	
+	<!-- Tipos simples -->
+    
+    <xsd:simpleType name="TURL">
+		<!--  Escribe aquí una restricción para validar cualquier URL empleando una expresión regular -->
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-z0-9]{1,256}\.com|[a-z0-9]{1,50}@\.com"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="tipoIdUser">
+   				<!-- Escribe aquí una restricción para validar ID de usuario/a empleando una expresión regular -->
+   				<xsd:restriction base="xsd:string">
+   					<xsd:pattern value="@\w{1,15}"></xsd:pattern>
+   				</xsd:restriction>
+   				
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoHashtag">
+   				<!-- Escribe aquí una restricción para validar hashtags empleando una expresión regular -->
+   				<xsd:restriction base="xsd:string">
+   					<xsd:pattern value="#\w{1,30}"></xsd:pattern>
+   				</xsd:restriction>
+    </xsd:simpleType>
+	
+</xsd:schema>

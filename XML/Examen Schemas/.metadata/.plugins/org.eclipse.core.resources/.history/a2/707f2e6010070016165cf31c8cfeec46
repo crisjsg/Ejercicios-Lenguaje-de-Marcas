@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obj:tweet xmlns:obj="http://www.w3c.org/objetos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3c.org/objetos objetos.xsd ">
+  <obj:nombreUsuario>Tecnocritica IV/2014</obj:nombreUsuario>
+  <obj:ID_user>obj:ID_user</obj:ID_user>
+  <obj:fechaPublicacion>obj:fechaPublicacion</obj:fechaPublicacion>
+  <obj:mensaje>obj:mensaje</obj:mensaje>
+  <obj:entidades>
+    <obj:menciones>obj:menciones</obj:menciones>
+    <obj:hashtag>obj:hashtag</obj:hashtag>
+    <obj:URL>obj:URL</obj:URL>
+  </obj:entidades>
+  <obj:imagen>obj:imagen</obj:imagen>
+  <obj:numeroRetweets>0</obj:numeroRetweets>
+  <obj:favorito>true</obj:favorito>
+</obj:tweet>

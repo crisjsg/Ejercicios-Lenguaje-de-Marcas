@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obj:tweet xmlns:obj="http://www.w3c.org/objetos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3c.org/objetos objetos.xsd ">
+  <obj:nombreUsuario>Tecnocritica IV/2014</obj:nombreUsuario>
+  <obj:ID_user>@tecnocritica</obj:ID_user>
+  <obj:fechaPublicacion>7 de mayo</obj:fechaPublicacion>
+  <obj:mensaje>Charla d David Bravo en marcha: la lucha contra el intercambio de obras intelectuales en España @dbravo #tecnocritica</obj:mensaje>
+  <obj:entidades>
+    <obj:mencion>@dbravo</obj:mencion>
+    <obj:mencion>@usuario2</obj:mencion>
+    <obj:hashtag>#tecnocritica</obj:hashtag>
+    <obj:hashtag>#examenXSD</obj:hashtag>
+    <obj:URL>https://twitter.com/tecnocritica/status/464079998765514752</obj:URL>
+    <obj:URL>https://google.es</obj:URL>
+  </obj:entidades>
+  <obj:imagen>https://pbs.twimg.com/media/BnC-TMzIYAAQ6HW.jpg</obj:imagen>
+  <obj:numeroRetweets>4</obj:numeroRetweets>
+  <obj:favorito>false</obj:favorito>
+  <obj:coordenadas>
+  	<obj:longitud>50</obj:longitud>
+  	<obj:latitud>-70</obj:latitud>
+  </obj:coordenadas>
+</obj:tweet>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.w3c.org/objetos"
+	xmlns:obj="http://www.w3c.org/objetos"
+	elementFormDefault="qualified">
+	
+	<!-- Sólo puedes modificar el atributo xmlns:obj en el elemento xsd:schema  -->
+		
+	<!--  Es necesario que completes las definiciones de tipos de este fichero según las indicaciones
+	y que importes este espacio de nombres a tu Schema para validar URL(s), IDs de usuario y hashtags en twitter -->
+	
+	<xsd:import schemaLocation="coordenadas.xsd"></xsd:import>
+	
+	<!-- Elemento raíz -->
+	
+	<xsd:element name="tweet" type="obj:tipoTweet"></xsd:element>
+	
+   	<!-- Modifica los atributos maxOccurs y minOccurs según convenga  -->
+
+	
+	<!-- Tipos simples -->
+    
+    <xsd:simpleType name="TURL">
+		<!--  Escribe aquí una restricción para validar cualquier URL empleando una expresión regular -->
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="http[s]*:\/\/.{1,256}.(com|es|org).*|.{1,256}@\w*\.(com|es|net)"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="tipoIdUser">
+   				<!-- Escribe aquí una restricción para validar ID de usuario/a empleando una expresión regular -->
+   				<xsd:restriction base="xsd:string">
+   					<xsd:pattern value="@\w{1,15}"></xsd:pattern>
+   				</xsd:restriction>
+   				
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoHashtag">
+   				<!-- Escribe aquí una restricción para validar hashtags empleando una expresión regular -->
+   				<xsd:restriction base="xsd:string">
+   					<xsd:pattern value="#\w{1,30}"></xsd:pattern>
+   				</xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoFechaPublicacion">
+    	<xsd:restriction base="xsd:string"></xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoMensaje">
+    	<xsd:restriction base="xsd:string">
+    		<xsd:maxLength value="140"></xsd:maxLength>
+    	</xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoNumRetweets">
+    	<xsd:restriction base="xsd:integer"></xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoFavorito">
+    	<xsd:restriction base="xsd:boolean"></xsd:restriction>
+    </xsd:simpleType>
+
+	<xsd:simpleType name="tipoNombreUsuario">
+    	<xsd:restriction base="xsd:string">
+    		<xsd:maxLength value="50"></xsd:maxLength>
+    	</xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Tipos complejos -->
+    
+    <xsd:complexType name="tipoTweet">
+    	<xsd:sequence>
+    		<xsd:element name="nombreUsuario" type="obj:tipoNombreUsuario"></xsd:element>
+    		<xsd:element name="ID_user" type="obj:tipoIdUser" />
+    		<xsd:element name="fechaPublicacion" type="obj:tipoFechaPublicacion"></xsd:element>
+			<xsd:element name="mensaje" type="obj:tipoMensaje"></xsd:element>
+			<xsd:element name="entidades" type="obj:tipoEntidades"></xsd:element>
+			<xsd:element name="imagen" type="obj:TURL"></xsd:element>
+			<xsd:element name="numeroRetweets" type="obj:tipoNumRetweets"></xsd:element>
+			<xsd:element name="favorito" type="obj:tipoFavorito"></xsd:element>
+			<xsd:element name="coordenadas" type="obj:tipoCoordenadas"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+	<xsd:complexType name="tipoCoordenadas">
+		<xsd:sequence>
+			<xsd:element name="longitud" type="longitude"></xsd:element>
+			<xsd:element name="latitud" type="latitude"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="tipoEntidades">
+		<xsd:sequence>
+			<xsd:element name="mencion" type="obj:tipoIdUser" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+			<xsd:element name="hashtag" type="obj:tipoHashtag" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="URL" type="obj:TURL" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+</xsd:schema>

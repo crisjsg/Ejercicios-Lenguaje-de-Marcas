@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- No es posible modificar de ningún modo este fichero -->
+
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  		xmlns:kml="http://www.opengis.net/kml/2.2"
+  		targetNamespace="http://www.opengis.net/kml/2.2"
+  		elementFormDefault="qualified"
+  		version="2.2.0">
+
+
+<complexType name="coordinatesType">
+	<sequence>
+		<element name="longitud" type="kml:longitude"></element>
+		<element name="latitud" type="kml:latitude"></element>
+		<element name="altitud" type="kml:altitude" minOccurs="0"></element>
+	</sequence>
+</complexType>
+
+
+<simpleType name="longitude">
+ <restriction base="float">
+ 	<maxInclusive value="180"/>
+ 	<minInclusive value="-180"/>
+ </restriction>
+</simpleType>
+
+
+<simpleType name="latitude">
+ <restriction base="float">
+ 	<maxInclusive value="90"/>
+ 	<minInclusive value="-90"/>
+ </restriction>
+</simpleType>
+
+
+<simpleType name="altitude">
+ <restriction base="positiveInteger">
+ </restriction>
+</simpleType>
+
+</schema>

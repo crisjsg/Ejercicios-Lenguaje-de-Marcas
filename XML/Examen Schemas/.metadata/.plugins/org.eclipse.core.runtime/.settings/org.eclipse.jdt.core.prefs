@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.userLibrary.JAXB=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="/JavaSchemas_JAXB/lib/jaxb-api.jar"/>\r\n\t<archive path\="/JavaSchemas_JAXB/lib/jaxb-impl.jar"/>\r\n\t<archive path\="/JavaSchemas_JAXB/lib/jaxb-xjc.jar"/>\r\n</userlibrary>\r\n
