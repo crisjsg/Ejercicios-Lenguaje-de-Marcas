@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Test</title>
+    <script type="text/javascript" src="d3.min.js"></script>"></script>
+</head>
+<body>
+    <script type="text/javascript">
+				    	//Anchura y Altura (para el elemento SVG)
+				var w = 500;
+				var h = 100;
+				var barPadding = 1; //Variable para la anchura variable de las barras.
+				//Valores de los datos.
+				var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+											11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+				//Elemento SVG
+				  //Aprovechamos la variable para mayor facilidad a 
+				  //la hora de seleccionarla.
+				var svg = d3
+				          .select("body")
+				          .append("svg")
+				          .attr("width", w)
+				          .attr("height", h);
+
+				//Contenido SVG
+				  //SVG del Rectangulo
+				svg
+				    .selectAll("rect") //Seleccionamos todos los rectangulos
+				    .data(dataset) //Datos de la lista "dataset" que emplearemos para los rectangulos
+				    .enter()
+				    .append("rect")
+
+				  //Atributos del Rectangulo
+				    //Posicion
+				    .attr("x", function(d, i) {
+				            return i * (w / dataset.length);})  //Posicion en el eje X según cantidad de valores de la lista "Dataset" del rectangulo
+				            
+				    .attr("y", function(d){
+				            return h - (d * 4);}) //Posicion en el eje Y del rectangulo siendo esta la Altura menos el valor del dato.
+				  
+				  //Anchura y Altura
+				    .attr("width", w / dataset.length - barPadding) //Anchura del rectangulo
+
+				    .attr("height", function(d){ //Altura del rectangulo
+				        return d * 4;})
+				  
+				  //Relleno
+				    .attr("fill", function(d) {
+				      return "rgb(" + (d * 10) + ", 0, 8)";});
+
+
+
+				//SVG del Texto
+				svg
+				         .selectAll("text")
+							   .data(dataset)
+							   .enter()
+							   .append("text")
+							   .text(function(d) {
+							   		return d;})
+				  //Atributos del texto
+
+				    //Posicion
+				         .attr("text-anchor", "middle")
+							   .attr("x", function(d, i) {
+							   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+							   })
+							   .attr("y", function(d) {
+							   		return h - (d * 4) + 15;})
+
+				    //Estilo
+							   .attr("font-family", "sans-serif")
+							   .attr("font-size", "11px")
+							   .attr("fill", "white")
+				         .attr("text-anchor", "middle");
+
+
+    </script>
+</body>
+</html>  
